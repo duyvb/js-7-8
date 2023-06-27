@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <h2 class="text-center mb-3">Bài Tập</h2>
+        </div>
+        <div class="row ">
+            <div class="item_1 col-6  ">
+                <input type="number" id="nhapN" class="form-control w-100" placeholder="Nhập n">
+            </div>
+            <button onclick="display()" id="btnthemso" class="btn btn-success col-6 w-25">Thêm Số</button>
+        </div>
+        
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="themSoChuoi"></span></p>
+        </div>
+        <br>
+        <br>
+        
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Tính Tổng</h4>
+        </div>
+        <div class="item_2">
+            <button onclick="sumArray()" id="btntinhtong" class="btn btn-success col-6 w-25">Tính Tổng</button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="tong"></span></p>
+        </div>
+
+
+        <br>
+        <br>
+        
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Đếm số dương</h4>
+        </div>
+        <div class="item_2">
+            <button onclick="demso()" id="btntinhtong" class="btn btn-success col-6 w-25">Đếm</button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="demSo"></span></p>
+        </div>
+
+
+
+
+        <br>
+        <br>
+
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Tìm Số Nhỏ Nhất  </h4>
+        </div>
+        <div class="item_2">
+            <button onclick="soNho()" id="btnsoNho" class="btn btn-success col-6 w-25">Tìm giá trị nhỏ nhất</button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="soNhoNhat"></span></p>
+        </div>
+
+
+        <br>
+        <br>
+
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Tìm Số Dương Nhỏ Nhất  </h4>
+        </div>
+        <div class="item_2">
+            <button onclick="duongNho()" id="btnduongNho" class="btn btn-success col-6 w-25">Tìm giá trị dương nhỏ nhất</button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="soDuongNhoNhat"></span></p>
+        </div>
+
+
+
+        <br>
+        <br>
+        
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Tìm số chẵn cuối cùng trong mảng</h4>
+        </div>
+        <div class="item_2">
+            <button onclick="sochan()" id="btntinhtong" class="btn btn-success col-6 w-25">Tìm số </button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="timSo"></span></p>
+        </div>
+
+
+        <br>
+    
+        <br>
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Sắp xếp tăng dần </h4>
+        </div>
+        <div class="item_2">
+            <button onclick="compare()" class="btn btn-success col-6 w-25">Sắp Xếp Tăng Dần </button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="tangDan"></span></p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Tìm số nguyên tố đầu tiên </h4>
+        </div>
+        <div class="item_2">
+            <button onclick="findFirstPrime()" class="btn btn-success col-6 w-25">Tìm số nguyên tố đầu tiên </button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="soNguyenTo"></span></p>
+        </div>
+
+        <br>
+        <br>
+
+
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập Đếm số nguyên </h4>
+        </div>
+        <div class="row mb-5">
+            <div class=" col-4">
+                <input type="number" id="soN" class="form-control w-100" placeholder="Nhập số n">
+            </div>
+            <div class="col-4">
+                <button onclick="themVao()" class="btn btn-success col-6 w-50">Thêm Số</button>
+            </div>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="themSoMang"></span></p>
+        </div>
+
+        <div class="item_2">
+            <button onclick="soNguyen()" class="btn btn-success col-6 w-25">Đếm số nguyên </button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="demSoNguyen"></span></p>
+        </div>
+
+        <br>
+        <br>
+        
+        <div class="form-group">
+            <h4 class="text-center mb-1">Bài Tập So Sánh Số Âm và Dương </h4>
+        </div>
+        <div class="row mb-5">
+            <div class=" col-4">
+                <input type="number" id="choN" class="form-control w-100" placeholder="Nhập số n">
+            </div>
+            <div class="col-4">
+                <button onclick="choSoVao()" class="btn btn-success col-6 w-50">Thêm Số</button>
+            </div>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="choSoMang"></span></p>
+        </div>
+        <div class="item_2">
+            <button onclick="soArr()" class="btn btn-success col-6 w-25">So Sánh</button>
+        </div>
+        <div class="mt-5 alert alert-success w-100">
+            <p> Kết quả : <span id="tinhSoSanh"></span></p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./js/index.js"></script>
+</body>
+
+</html>
